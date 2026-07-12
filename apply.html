@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply &mdash; Synthium Data</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="/" class="logo">Synthium Data</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="careers.html">Careers</a>
+        <a href="apply.html" class="btn-primary">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Apply</h1>
+      <p>Upload your resume and we'll parse it automatically.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-container">
+      <form id="applyForm" novalidate>
+
+        <div class="form-group">
+          <label for="resume">Upload Resume (PDF, DOCX)</label>
+          <div class="resume-zone" id="resumeZone">
+            <span>&#128206; Drop your resume here or click to browse</span>
+            <input type="file" id="resume" accept=".pdf,.docx,.doc" />
+          </div>
+          <div id="resumeStatus" class="resume-status"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="role">Position Applying For</label>
+          <select id="role" required>
+            <option value="">Select a position</option>
+            <option>Senior Data Engineer</option>
+            <option>QA / Operations Lead</option>
+            <option>Data / ML Scientist</option>
+            <option>Junior Data Engineer</option>
+            <option>Senior Annotator (Domain Specialist)</option>
+            <option>General Application</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Skills (comma separated)</label>
+          <input type="text" id="skills" placeholder="e.g. Python, PyTorch, Spark, SQL" />
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Relevant Experience</label>
+          <textarea id="experience" rows="5" placeholder="Briefly describe your relevant experience..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="cover">Cover Letter / Notes</label>
+          <textarea id="cover" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-lg btn-block">Submit Application</button>
+      </form>
+      <div id="formSuccess" class="form-success hidden">
+        <h2>&#10003; Application Submitted</h2>
+        <p>We'll review your application and get back to you within 5 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; 2026 Synthium Data Inc.</span>
+      <div class="footer-links">
+        <a href="careers.html">Careers</a>
+        <a href="apply.html">Apply</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
