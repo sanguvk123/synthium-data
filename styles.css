@@ -241,6 +241,20 @@ nav {
   margin-top: 32px;
 }
 
+.section-sub-heading {
+  margin: 48px 0 24px;
+}
+
+.section-sub-heading h2 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.section-sub-heading p {
+  color: #6c757d;
+  font-size: 0.9375rem;
+}
+
 /* Page Header */
 .page-header {
   background: #fff;
