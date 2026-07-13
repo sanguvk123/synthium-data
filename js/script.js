@@ -1,5 +1,11 @@
 (function () {
   const applyForm = document.getElementById("applyForm");
+
+  // POST endpoint — switch this after deploying the Google Apps Script
+  // 1. Open script.google.com, create project, paste email-backend.gs
+  // 2. Deploy > Web App > Execute as "You" > Access "Anyone"
+  // 3. Copy the deployment URL and paste it below
+  const API_ENDPOINT = "https://formsubmit.co/ajax/sangkalbe@gmail.com";
   const formSuccess = document.getElementById("formSuccess");
   const resumeInput = document.getElementById("resume");
   const resumeZone = document.getElementById("resumeZone");
@@ -183,20 +189,23 @@
     btn.disabled = true;
     btn.textContent = "Submitting...";
 
+    const role = document.getElementById("role").value;
     const data = {
-      _subject: `New application for ${document.getElementById("role").value}`,
-      firstName: document.getElementById("firstName").value.trim(),
-      lastName: document.getElementById("lastName").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      phone: document.getElementById("phone").value.trim(),
-      role: document.getElementById("role").value,
-      skills: document.getElementById("skills").value.trim(),
-      experience: document.getElementById("experience").value.trim(),
-      cover: document.getElementById("cover").value.trim(),
-      resume: uploadedResume ? uploadedResume.name : "Not uploaded",
+      _subject: `New application for ${role}`,
+      _captcha: "false",
+      _template: "table",
+      _honeypot: "",
+      "Full Name": `${document.getElementById("firstName").value.trim()} ${document.getElementById("lastName").value.trim()}`,
+      Email: document.getElementById("email").value.trim(),
+      Phone: document.getElementById("phone").value.trim(),
+      Role: role,
+      Skills: document.getElementById("skills").value.trim(),
+      Experience: document.getElementById("experience").value.trim(),
+      "Cover Letter": document.getElementById("cover").value.trim(),
+      Resume: uploadedResume ? uploadedResume.name : "Not uploaded",
     };
 
-    fetch("https://formsubmit.co/ajax/sangkalbe@gmail.com", {
+    fetch(API_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -214,7 +223,7 @@
       .catch(() => {
         btn.disabled = false;
         btn.textContent = "Submit Application";
-        setResumeStatus("Failed to submit. Please try again or email us directly.", "error");
+        setResumeStatus("Could not reach the server. Please email your details to sangkalbe@gmail.com", "error");
         submitting = false;
       });
   });
