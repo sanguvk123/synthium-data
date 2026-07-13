@@ -166,7 +166,6 @@
     e.preventDefault();
     if (submitting) return;
 
-    // Basic validation
     const required = applyForm.querySelectorAll("[required]");
     let valid = true;
     required.forEach((el) => {
@@ -184,8 +183,8 @@
     btn.disabled = true;
     btn.textContent = "Submitting...";
 
-    // Build application data
     const data = {
+      _subject: `New application for ${document.getElementById("role").value}`,
       firstName: document.getElementById("firstName").value.trim(),
       lastName: document.getElementById("lastName").value.trim(),
       email: document.getElementById("email").value.trim(),
@@ -194,18 +193,29 @@
       skills: document.getElementById("skills").value.trim(),
       experience: document.getElementById("experience").value.trim(),
       cover: document.getElementById("cover").value.trim(),
-      resume: uploadedResume ? uploadedResume.name : null,
-      submittedAt: new Date().toISOString(),
+      resume: uploadedResume ? uploadedResume.name : "Not uploaded",
     };
 
-    // In production, POST to your backend
-    console.log("Application submitted:", data);
-
-    // Show success
-    applyForm.classList.add("hidden");
-    formSuccess.classList.remove("hidden");
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    fetch("https://formsubmit.co/ajax/sangkalbe@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((r) => r.json())
+      .then((res) => {
+        if (res.success) {
+          applyForm.classList.add("hidden");
+          formSuccess.classList.remove("hidden");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          throw new Error("Submission failed");
+        }
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = "Submit Application";
+        setResumeStatus("Failed to submit. Please try again or email us directly.", "error");
+        submitting = false;
+      });
   });
 })();
