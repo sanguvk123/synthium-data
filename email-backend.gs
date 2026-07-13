@@ -1,10 +1,10 @@
 // Google Apps Script — Email Backend for Synthium Data
 // Deploy as Web App: Execute as "Me", Access "Anyone"
-// Then paste the deployment URL into js/script.js
+// This handles both JSON POST and form-encoded submissions
 
 function doPost(e) {
   try {
-    const data = JSON.parse(e.postData.contents);
+    const data = e.parameter || JSON.parse(e.postData.contents);
 
     let body = "=== New Application ===\n\n";
     for (const [key, value] of Object.entries(data)) {
@@ -28,4 +28,5 @@ function doPost(e) {
   }
 }
 
-// Test with: curl -X POST <DEPLOY_URL> -H "Content-Type: text/plain" -d '{"_subject":"Test","Name":"Alice"}'
+// Test with:
+//   curl -X POST <DEPLOY_URL> -d "_subject=Test&Name=Alice&Role=Engineer"

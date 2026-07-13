@@ -29,7 +29,7 @@
 
   <section class="section">
     <div class="container form-container">
-      <form id="applyForm" novalidate>
+      <form id="applyForm" novalidate action="https://script.google.com/macros/s/AKfycbxld2TO6JSk80m5AUNXFEiBNWv5fIpyLDeHHy5dH3G1vELux3dIUepQXBovNRUfiVZnNA/exec" method="POST" target="submitFrame">
 
         <div class="form-group">
           <label for="resume">Upload Resume (PDF, DOCX)</label>
@@ -92,8 +92,19 @@
           <textarea id="cover" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
         </div>
 
+        <input type="hidden" name="_subject" id="hiddenSubject" />
+        <input type="hidden" name="Full Name" id="hiddenName" />
+        <input type="hidden" name="Email" id="hiddenEmail" />
+        <input type="hidden" name="Phone" id="hiddenPhone" />
+        <input type="hidden" name="Role" id="hiddenRole" />
+        <input type="hidden" name="Skills" id="hiddenSkills" />
+        <input type="hidden" name="Experience" id="hiddenExperience" />
+        <input type="hidden" name="Cover Letter" id="hiddenCover" />
+        <input type="hidden" name="Resume" id="hiddenResume" />
+
         <button type="submit" class="btn-primary btn-lg btn-block">Submit Application</button>
       </form>
+      <iframe name="submitFrame" style="display:none"></iframe>
       <div id="formSuccess" class="form-success hidden">
         <h2>&#10003; Application Submitted</h2>
         <p>We'll review your application and get back to you within 5 business days.</p>

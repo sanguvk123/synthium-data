@@ -163,11 +163,7 @@
   }
 
   // ---------- Form Submission ----------
-  let submitting = false;
   applyForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (submitting) return;
-
     const required = applyForm.querySelectorAll("[required]");
     let valid = true;
     required.forEach((el) => {
@@ -178,44 +174,30 @@
         el.style.borderColor = "";
       }
     });
-    if (!valid) return;
-
-    submitting = true;
-    const btn = applyForm.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = "Submitting...";
+    if (!valid) {
+      e.preventDefault();
+      return;
+    }
 
     const f = (id) => document.getElementById(id).value.trim();
     const role = f("role");
 
-    const data = {
-      _subject: `Application for ${role}`,
-      "Full Name": `${f("firstName")} ${f("lastName")}`,
-      Email: f("email"),
-      Phone: f("phone"),
-      Role: role,
-      Skills: f("skills"),
-      Experience: f("experience"),
-      "Cover Letter": f("cover"),
-      Resume: uploadedResume ? uploadedResume.name : "Not uploaded",
-    };
+    document.getElementById("hiddenSubject").value = `Application for ${role}`;
+    document.getElementById("hiddenName").value = `${f("firstName")} ${f("lastName")}`;
+    document.getElementById("hiddenEmail").value = f("email");
+    document.getElementById("hiddenPhone").value = f("phone");
+    document.getElementById("hiddenRole").value = role;
+    document.getElementById("hiddenSkills").value = f("skills");
+    document.getElementById("hiddenExperience").value = f("experience");
+    document.getElementById("hiddenCover").value = f("cover");
+    document.getElementById("hiddenResume").value = uploadedResume ? uploadedResume.name : "Not uploaded";
 
-    fetch(API_ENDPOINT, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify(data),
-    })
-      .then(() => {
-        applyForm.classList.add("hidden");
-        formSuccess.classList.remove("hidden");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      })
-      .catch(() => {
-        btn.disabled = false;
-        btn.textContent = "Submit Application";
-        setResumeStatus("Could not send. Try emailing sangkalbe@gmail.com directly.", "error");
-        submitting = false;
-      });
+    // Let the form submit natively to the iframe (no page reload)
+    // Success message shows immediately
+    setTimeout(() => {
+      applyForm.classList.add("hidden");
+      formSuccess.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
   });
 })();
