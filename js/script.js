@@ -202,18 +202,14 @@
 
     fetch(API_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain" },
       body: JSON.stringify(data),
     })
-      .then((r) => r.json())
-      .then((res) => {
-        if (res.success) {
-          applyForm.classList.add("hidden");
-          formSuccess.classList.remove("hidden");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        } else {
-          throw new Error("Submission failed");
-        }
+      .then(() => {
+        applyForm.classList.add("hidden");
+        formSuccess.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch(() => {
         btn.disabled = false;

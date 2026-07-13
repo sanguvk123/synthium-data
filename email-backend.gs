@@ -28,4 +28,4 @@ function doPost(e) {
   }
 }
 
-// Test with: curl -X POST <DEPLOY_URL> -H "Content-Type: application/json" -d '{"_subject":"Test","Name":"Alice"}'
+// Test with: curl -X POST <DEPLOY_URL> -H "Content-Type: text/plain" -d '{"_subject":"Test","Name":"Alice"}'
