@@ -1,11 +1,7 @@
 (function () {
   const applyForm = document.getElementById("applyForm");
 
-  // POST endpoint — switch this after deploying the Google Apps Script
-  // 1. Open script.google.com, create project, paste email-backend.gs
-  // 2. Deploy > Web App > Execute as "You" > Access "Anyone"
-  // 3. Copy the deployment URL and paste it below
-  const API_ENDPOINT = "https://formsubmit.co/ajax/sangkalbe@gmail.com";
+  const API_ENDPOINT = "https://script.google.com/macros/s/AKfycbxld2TO6JSk80m5AUNXFEiBNWv5fIpyLDeHHy5dH3G1vELux3dIUepQXBovNRUfiVZnNA/exec";
   const formSuccess = document.getElementById("formSuccess");
   const resumeInput = document.getElementById("resume");
   const resumeZone = document.getElementById("resumeZone");
@@ -189,19 +185,18 @@
     btn.disabled = true;
     btn.textContent = "Submitting...";
 
-    const role = document.getElementById("role").value;
+    const f = (id) => document.getElementById(id).value.trim();
+    const role = f("role");
+
     const data = {
-      _subject: `New application for ${role}`,
-      _captcha: "false",
-      _template: "table",
-      _honeypot: "",
-      "Full Name": `${document.getElementById("firstName").value.trim()} ${document.getElementById("lastName").value.trim()}`,
-      Email: document.getElementById("email").value.trim(),
-      Phone: document.getElementById("phone").value.trim(),
+      _subject: `Application for ${role}`,
+      "Full Name": `${f("firstName")} ${f("lastName")}`,
+      Email: f("email"),
+      Phone: f("phone"),
       Role: role,
-      Skills: document.getElementById("skills").value.trim(),
-      Experience: document.getElementById("experience").value.trim(),
-      "Cover Letter": document.getElementById("cover").value.trim(),
+      Skills: f("skills"),
+      Experience: f("experience"),
+      "Cover Letter": f("cover"),
       Resume: uploadedResume ? uploadedResume.name : "Not uploaded",
     };
 
@@ -223,7 +218,7 @@
       .catch(() => {
         btn.disabled = false;
         btn.textContent = "Submit Application";
-        setResumeStatus("Could not reach the server. Please email your details to sangkalbe@gmail.com", "error");
+        setResumeStatus("Could not send. Try emailing sangkalbe@gmail.com directly.", "error");
         submitting = false;
       });
   });
