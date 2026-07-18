@@ -531,6 +531,7 @@
   .resume-status.error { color: var(--danger); }
 
   /* Success panel */
+  .hidden { display: none !important; }
   .success-panel { text-align: center; padding: 30px 0; }
   .success-panel.hidden { display: none; }
   .success-check {
@@ -805,8 +806,8 @@
 
           <!-- Honeypot field for basic bot protection -->
           <div class="honeypot-field" aria-hidden="true">
-            <label for="companyWebsite">Company Website</label>
-            <input type="text" id="companyWebsite" name="_companyWebsite" tabindex="-1" autocomplete="off" />
+            <label for="hpField">Company Website</label>
+            <input type="text" id="hpField" name="_hpField" tabindex="-1" autocomplete="off" />
           </div>
 
           <input type="hidden" name="_subject" id="subjectField" />
@@ -1080,6 +1081,8 @@
   }
 
   function showSuccess() {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
     form.classList.add('hidden');
     successPanel.classList.remove('hidden');
   }
@@ -1091,15 +1094,27 @@
     formBanner.classList.remove('show');
     submitBtn.disabled = false;
     submitBtn.classList.remove('loading');
+    submitInFlight = false;
   }
 
   resetLink.addEventListener('click', resetToForm);
+
+  // Confirms the iframe actually finished loading a response before declaring
+  // success (rather than blindly assuming it after a fixed delay).
+  let submitInFlight = false;
+  const submitFrame = document.querySelector('iframe[name="submitFrame"]');
+  submitFrame.addEventListener('load', () => {
+    if (submitInFlight) {
+      submitInFlight = false;
+      showSuccess();
+    }
+  });
 
   form.addEventListener('submit', function (e) {
     formBanner.classList.remove('show');
 
     // Honeypot check — if filled, silently drop (likely a bot)
-    if (document.getElementById('companyWebsite').value) {
+    if (document.getElementById('hpField').value) {
       e.preventDefault();
       return;
     }
@@ -1109,17 +1124,29 @@
       return;
     }
 
-    document.getElementById('subjectField').value =
-      'New ML Team Application — ' + document.getElementById('fullName').value.trim();
+    if (submitInFlight) {
+      e.preventDefault();
+      return;
+    }
 
+    document.getElementById('subjectField').value =
+      'Application for ML Team — ' + document.getElementById('fullName').value.trim();
+
+    submitInFlight = true;
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
 
     // The form submits natively to a hidden iframe targeting the Google Apps Script
-    // backend — this avoids browser CORS restrictions entirely. We show the success
-    // state optimistically since the iframe response isn't readable cross-origin.
-    setTimeout(showSuccess, 600);
+    // backend — this avoids browser CORS restrictions entirely. Success is confirmed
+    // by the iframe's load event above; this is just a safety net if that never fires.
+    setTimeout(() => {
+      if (submitInFlight) {
+        submitInFlight = false;
+        showSuccess();
+      }
+    }, 6000);
   });
+
 </script>
 
 </body>
