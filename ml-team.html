@@ -922,7 +922,9 @@
   const resumeInput = document.getElementById('resumeInput');
   const resumeStatus = document.getElementById('resumeStatus');
 
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  if (typeof pdfjsLib !== 'undefined') {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  }
 
   resumeZone.addEventListener('click', () => resumeInput.click());
   resumeZone.addEventListener('dragover', (e) => { e.preventDefault(); resumeZone.classList.add('dragover'); });
