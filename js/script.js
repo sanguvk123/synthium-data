@@ -1,7 +1,7 @@
 (function () {
   const applyForm = document.getElementById("applyForm");
 
-  const API_ENDPOINT = "https://script.google.com/macros/s/AKfycbxld2TO6JSk80m5AUNXFEiBNWv5fIpyLDeHHy5dH3G1vELux3dIUepQXBovNRUfiVZnNA/exec";
+  const API_ENDPOINT = "https://script.google.com/macros/s/AKfycbxKOwo_DhhOixwPAgzHBV_3PXqe2GezLi_PUJ9pI9-urmOA2TCMDszm1pXAvLChNe_aag/exec";
   const formSuccess = document.getElementById("formSuccess");
   const resumeInput = document.getElementById("resume");
   const resumeZone = document.getElementById("resumeZone");
