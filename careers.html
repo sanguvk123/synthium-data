@@ -5,298 +5,364 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Careers &mdash; Synthium Data | ML &amp; Data Engineering Jobs</title>
   <meta name="description" content="Join Synthium Data. Open roles in ML engineering, data engineering, annotation, and operations. Remote-first, real impact on frontier AI models." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">Synthium Data</a>
-      <div class="nav-links">
-        <a href="index.html">ML Team</a>
-        <a href="corporate.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="apply.html" class="btn-primary">Apply Now</a>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Synthium <span>Data</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">ML Team</a>
+      <a href="corporate.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="apply.html" class="nav-cta">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <span class="badge reveal">We're Hiring</span>
+    <h1 class="hero-title reveal">Join us in building<br />the <span class="gradient-text">data layer for AI</span></h1>
+    <p class="hero-sub reveal">From student interns to senior engineers — help us build the infrastructure that powers frontier models.</p>
+    <div class="hero-actions reveal">
+      <a href="#openings" class="btn btn-primary">View Openings <span class="arrow">↓</span></a>
+      <a href="apply.html" class="btn btn-ghost">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="openings">
+  <div class="container">
+
+    <div class="section-head centered">
+      <span class="eyebrow">Why Join</span>
+      <h2>Why Synthium Data?</h2>
+      <p>We're building a team that values impact, growth, and craftsmanship.</p>
+    </div>
+    <div class="grid-3" style="margin-bottom:60px;">
+      <div class="card">
+        <h3>Remote-First</h3>
+        <p>Work from anywhere. Async communication, weekly sprints, and a culture that values output over hours.</p>
+      </div>
+      <div class="card">
+        <h3>Real Impact</h3>
+        <p>Your pipelines power frontier AI models. Every line of code you write improves real systems used by thousands.</p>
+      </div>
+      <div class="card">
+        <h3>Grow Fast</h3>
+        <p>Senior mentorship, real code review, and ownership from day one. We promote from within and invest in your growth.</p>
       </div>
     </div>
-  </nav>
-
-  <section class="page-header">
-    <div class="container">
-      <h1>Careers</h1>
-      <p>Join us in building the data infrastructure that powers frontier AI models.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <div style="margin-bottom:48px;">
-        <h2 class="section-title" style="text-align:left;">Why Join Synthium Data</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Remote-First</h3>
-            <p>Work from anywhere. Async communication, weekly sprints, and a culture that values output over hours.</p>
-          </div>
-          <div class="card">
-            <h3>Real Impact</h3>
-            <p>Your pipelines power frontier AI models. Every line of code you write improves real systems used by thousands.</p>
-          </div>
-          <div class="card">
-            <h3>Grow Fast</h3>
-            <p>Senior mentorship, real code review, and ownership from day one. We promote from within and invest in your growth.</p>
-          </div>
-        </div>
-        <div class="grid-3" style="margin-top:16px;">
-          <div class="card">
-            <h3>Competitive Pay</h3>
-            <p>We compensate fairly for all roles — from student interns to senior engineers. Your work has real value.</p>
-          </div>
-          <div class="card">
-            <h3>Cutting-Edge Tech</h3>
-            <p>Petabyte-scale Spark, Kubernetes, PyTorch, LLM fine-tuning pipelines. You'll work with the modern ML stack.</p>
-          </div>
-          <div class="card">
-            <h3>Students Welcome</h3>
-            <p>No prior work experience? No problem. Check out our <a href="index.html" style="color:#1a1a2e;text-decoration:underline;font-weight:600;">ML Team program</a> built specifically for students.</p>
-          </div>
-        </div>
+    <div class="grid-3" style="margin-bottom:60px;">
+      <div class="card">
+        <h3>Competitive Pay</h3>
+        <p>We compensate fairly for all roles — from student interns to senior engineers. Your work has real value.</p>
       </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>Senior Data Engineer</h3>
-            <span class="badge">Full-time</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=Senior+Data+Engineer" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Design and build distributed data pipelines for petabyte-scale LLM training data.
-          Own the architecture for ingestion, deduplication, decontamination, and formatting.
-        </p>
-        <details>
-          <summary>Requirements</summary>
-          <ul>
-            <li>5+ years experience in data engineering or ML infrastructure</li>
-            <li>Proficiency in Python, Spark, and SQL</li>
-            <li>Experience with large-scale distributed systems (Kubernetes, Airflow, Dask)</li>
-            <li>Familiarity with LLM training pipelines (SFT, DPO, RLHF) is a plus</li>
-          </ul>
-        </details>
+      <div class="card">
+        <h3>Cutting-Edge Tech</h3>
+        <p>Petabyte-scale Spark, Kubernetes, PyTorch, LLM fine-tuning pipelines. You'll work with the modern ML stack.</p>
       </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>QA / Operations Lead</h3>
-            <span class="badge">Full-time</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=QA+%2F+Operations+Lead" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Manage annotation quality rubrics, design labeling guidelines, measure inter-annotator
-          agreement, and drive throughput improvements across the annotation team.
-        </p>
-        <details>
-          <summary>Requirements</summary>
-          <ul>
-            <li>3+ years in QA, operations, or project management for data annotation</li>
-            <li>Experience with labeling platforms (Scale AI, Labelbox, Prodigy)</li>
-            <li>Strong analytical skills and experience with statistical quality metrics</li>
-            <li>Experience managing distributed / remote teams</li>
-          </ul>
-        </details>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>Data / ML Scientist</h3>
-            <span class="badge">Full-time</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=Data+%2F+ML+Scientist" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Define formatting schemas (ChatML, ShareGPT, Alpaca), tokenization strategies,
-          train/validation/test splits, and curriculum ordering for SFT and DPO pipelines.
-        </p>
-        <details>
-          <summary>Requirements</summary>
-          <ul>
-            <li>MS/PhD in Computer Science, ML, or related field</li>
-            <li>Strong Python skills and experience with PyTorch / Hugging Face ecosystem</li>
-            <li>Deep understanding of LLM training paradigms (SFT, DPO, RLHF)</li>
-            <li>Experience with data quality analysis and decontamination methods</li>
-          </ul>
-        </details>
-      </div>
-
-      <div class="section-sub-heading">
-        <h2>For Students &amp; Recent Graduates (IIT/NIT)</h2>
-        <p>No prior work experience required. Strong fundamentals + willingness to learn is all you need.</p>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>Junior Data Engineer</h3>
-            <span class="badge">Full-time</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=Junior+Data+Engineer" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Implement ingestion, deduplication, filtering, and formatting scripts. Maintain
-          data quality dashboards and assist senior engineers with pipeline improvements.
-        </p>
-        <details>
-          <summary>What you need</summary>
-          <ul>
-            <li>Pursuing or completed BTech/MTech in CS or related field (IIT/NIT preferred)</li>
-            <li>Proficiency in Python</li>
-            <li>Familiarity with SQL and basic distributed computing concepts</li>
-            <li>Eagerness to learn LLM data pipelines &mdash; we'll train you on Spark, Airflow, and the rest</li>
-          </ul>
-        </details>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>Data Engineering Intern</h3>
-            <span class="badge">Internship</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=Data+Engineering+Intern" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Build and maintain data processing scripts in Python. Learn how petabyte-scale LLM
-          training data is cleaned, decontaminated, and formatted. Work closely with senior engineers.
-        </p>
-        <details>
-          <summary>What you need</summary>
-          <ul>
-            <li>Currently pursuing BTech/MTech in CS or related field (IIT/NIT preferred)</li>
-            <li>Solid Python skills (lists, dicts, file I/O, basic libraries)</li>
-            <li>Familiarity with SQL and git</li>
-            <li>6-12 month commitment, 15-30 hours/week</li>
-          </ul>
-        </details>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>ML Data Intern</h3>
-            <span class="badge">Internship</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=ML+Data+Intern" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Assist with dataset formatting (ChatML, Alpaca, ShareGPT schemas), tokenization analysis,
-          and train/validation/test splitting. Work with the ML team to ensure data quality.
-        </p>
-        <details>
-          <summary>What you need</summary>
-          <ul>
-            <li>Currently pursuing BTech/MTech in CS, AI/ML, or related (IIT/NIT preferred)</li>
-            <li>Python proficiency and some experience with PyTorch or Hugging Face</li>
-            <li>Understanding of basic ML concepts (train/test split, tokenization, classification)</li>
-            <li>6-12 month commitment, 15-30 hours/week</li>
-          </ul>
-        </details>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>Coding &amp; Math Annotator</h3>
-            <span class="badge">Part-time</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=Coding+%26+Math+Annotator" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Create high-quality instruction-response pairs for coding and math domains. Evaluate
-          LLM outputs and rank responses by quality. This is a great way to get hands-on with
-          how frontier models learn.
-        </p>
-        <details>
-          <summary>What you need</summary>
-          <ul>
-            <li>Currently pursuing BTech/MTech in CS, Math, or related (IIT/NIT preferred)</li>
-            <li>Strong problem-solving skills and domain knowledge (DSA, competitive programming, advanced math)</li>
-            <li>Excellent written English</li>
-            <li>Flexible 10-25 hours/week &mdash; fits around class schedules</li>
-          </ul>
-        </details>
-      </div>
-
-      <h2 class="section-title" style="margin-top:60px;">For Experienced Professionals</h2>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <h3>Senior Annotator (Domain Specialist)</h3>
-            <span class="badge">Contract</span>
-            <span class="badge badge-outline">Remote</span>
-          </div>
-          <a href="apply.html?role=Senior+Annotator+%28Domain+Specialist%29" class="btn-primary btn-sm">Apply</a>
-        </div>
-        <p class="job-desc">
-          Create high-quality instruction-response pairs and preference rankings in specialized
-          domains (coding, math, medicine, law). Provide feedback to improve annotation guidelines.
-        </p>
-        <details>
-          <summary>Requirements</summary>
-          <ul>
-            <li>Expert-level knowledge in a specialized domain (STEM, medicine, law, etc.)</li>
-            <li>Excellent written English and attention to detail</li>
-            <li>Experience with LLM output evaluation or data labeling preferred</li>
-            <li>Ability to work 20-40 hours/week on a flexible schedule</li>
-          </ul>
-        </details>
-      </div>
-
-      <div style="margin-top:60px;padding-top:48px;border-top:1px solid #e9ecef;">
-        <h2 class="section-title" style="text-align:left;">Our Hiring Process</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h3>1. Apply</h3>
-            <p>Submit your resume and a few details about yourself. We read every application personally.</p>
-          </div>
-          <div class="card">
-            <h3>2. Technical Screen</h3>
-            <p>A short take-home challenge relevant to the role. No whiteboarding, no stress — just show us how you think.</p>
-          </div>
-          <div class="card">
-            <h3>3. Chat With Us</h3>
-            <p>A 30-minute video call with your future team. We talk about your experience, our work, and fit.</p>
-          </div>
-        </div>
-        <div class="center-btn" style="margin-top:32px;">
-          <p style="color:#6c757d;margin-bottom:16px;">From application to offer, we aim to complete the process within 10 business days.</p>
-          <a href="apply.html" class="btn-primary btn-lg">Start Your Application</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>&copy; 2026 Synthium Data Inc.</span>
-      <div class="footer-links">
-        <a href="index.html">ML Team</a>
-        <a href="corporate.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="apply.html">Apply</a>
+      <div class="card">
+        <h3>Students Welcome</h3>
+        <p>No prior work experience? No problem. Check out our <a href="index.html" style="color:var(--accent-2);text-decoration:underline;font-weight:600;">ML Team program</a> built specifically for students.</p>
       </div>
     </div>
-  </footer>
+
+    <div class="section-head centered">
+      <span class="eyebrow">Open Positions</span>
+      <h2>Current Openings</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Senior Data Engineer</h3>
+          <span class="badge">Full-time</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=Senior+Data+Engineer" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Design and build distributed data pipelines for petabyte-scale LLM training data.
+        Own the architecture for ingestion, deduplication, decontamination, and formatting.
+      </p>
+      <details>
+        <summary>Requirements</summary>
+        <ul>
+          <li>5+ years experience in data engineering or ML infrastructure</li>
+          <li>Proficiency in Python, Spark, and SQL</li>
+          <li>Experience with large-scale distributed systems (Kubernetes, Airflow, Dask)</li>
+          <li>Familiarity with LLM training pipelines (SFT, DPO, RLHF) is a plus</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>QA / Operations Lead</h3>
+          <span class="badge">Full-time</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=QA+%2F+Operations+Lead" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Manage annotation quality rubrics, design labeling guidelines, measure inter-annotator
+        agreement, and drive throughput improvements across the annotation team.
+      </p>
+      <details>
+        <summary>Requirements</summary>
+        <ul>
+          <li>3+ years in QA, operations, or project management for data annotation</li>
+          <li>Experience with labeling platforms (Scale AI, Labelbox, Prodigy)</li>
+          <li>Strong analytical skills and experience with statistical quality metrics</li>
+          <li>Experience managing distributed / remote teams</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Data / ML Scientist</h3>
+          <span class="badge">Full-time</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=Data+%2F+ML+Scientist" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Define formatting schemas (ChatML, ShareGPT, Alpaca), tokenization strategies,
+        train/validation/test splits, and curriculum ordering for SFT and DPO pipelines.
+      </p>
+      <details>
+        <summary>Requirements</summary>
+        <ul>
+          <li>MS/PhD in Computer Science, ML, or related field</li>
+          <li>Strong Python skills and experience with PyTorch / Hugging Face ecosystem</li>
+          <li>Deep understanding of LLM training paradigms (SFT, DPO, RLHF)</li>
+          <li>Experience with data quality analysis and decontamination methods</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="section-head centered" style="margin-top:60px;">
+      <span class="eyebrow">For Students</span>
+      <h2>Student &amp; Graduate Roles</h2>
+      <p>No prior work experience required. Strong fundamentals + willingness to learn is all you need.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Junior Data Engineer</h3>
+          <span class="badge">Full-time</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=Junior+Data+Engineer" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Implement ingestion, deduplication, filtering, and formatting scripts. Maintain
+        data quality dashboards and assist senior engineers with pipeline improvements.
+      </p>
+      <details>
+        <summary>What you need</summary>
+        <ul>
+          <li>Pursuing or completed BTech/MTech in CS or related field (IIT/NIT preferred)</li>
+          <li>Proficiency in Python</li>
+          <li>Familiarity with SQL and basic distributed computing concepts</li>
+          <li>Eagerness to learn LLM data pipelines &mdash; we'll train you on Spark, Airflow, and the rest</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Data Engineering Intern</h3>
+          <span class="badge">Internship</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=Data+Engineering+Intern" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Build and maintain data processing scripts in Python. Learn how petabyte-scale LLM
+        training data is cleaned, decontaminated, and formatted. Work closely with senior engineers.
+      </p>
+      <details>
+        <summary>What you need</summary>
+        <ul>
+          <li>Currently pursuing BTech/MTech in CS or related field (IIT/NIT preferred)</li>
+          <li>Solid Python skills (lists, dicts, file I/O, basic libraries)</li>
+          <li>Familiarity with SQL and git</li>
+          <li>6-12 month commitment, 15-30 hours/week</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>ML Data Intern</h3>
+          <span class="badge">Internship</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=ML+Data+Intern" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Assist with dataset formatting (ChatML, Alpaca, ShareGPT schemas), tokenization analysis,
+        and train/validation/test splitting. Work with the ML team to ensure data quality.
+      </p>
+      <details>
+        <summary>What you need</summary>
+        <ul>
+          <li>Currently pursuing BTech/MTech in CS, AI/ML, or related (IIT/NIT preferred)</li>
+          <li>Python proficiency and some experience with PyTorch or Hugging Face</li>
+          <li>Understanding of basic ML concepts (train/test split, tokenization, classification)</li>
+          <li>6-12 month commitment, 15-30 hours/week</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Coding &amp; Math Annotator</h3>
+          <span class="badge">Part-time</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=Coding+%26+Math+Annotator" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Create high-quality instruction-response pairs for coding and math domains. Evaluate
+        LLM outputs and rank responses by quality. This is a great way to get hands-on with
+        how frontier models learn.
+      </p>
+      <details>
+        <summary>What you need</summary>
+        <ul>
+          <li>Currently pursuing BTech/MTech in CS, Math, or related (IIT/NIT preferred)</li>
+          <li>Strong problem-solving skills and domain knowledge (DSA, competitive programming, advanced math)</li>
+          <li>Excellent written English</li>
+          <li>Flexible 10-25 hours/week &mdash; fits around class schedules</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="section-head centered" style="margin-top:60px;">
+      <span class="eyebrow">Experienced</span>
+      <h2>For Professionals</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Senior Annotator (Domain Specialist)</h3>
+          <span class="badge">Contract</span>
+          <span class="badge badge-outline">Remote</span>
+        </div>
+        <a href="apply.html?role=Senior+Annotator+%28Domain+Specialist%29" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Apply</a>
+      </div>
+      <p class="job-desc">
+        Create high-quality instruction-response pairs and preference rankings in specialized
+        domains (coding, math, medicine, law). Provide feedback to improve annotation guidelines.
+      </p>
+      <details>
+        <summary>Requirements</summary>
+        <ul>
+          <li>Expert-level knowledge in a specialized domain (STEM, medicine, law, etc.)</li>
+          <li>Excellent written English and attention to detail</li>
+          <li>Experience with LLM output evaluation or data labeling preferred</li>
+          <li>Ability to work 20-40 hours/week on a flexible schedule</li>
+        </ul>
+      </details>
+    </div>
+
+    <div style="margin-top:60px;padding-top:48px;border-top:1px solid var(--border);">
+      <div class="section-head centered">
+        <span class="eyebrow">Process</span>
+        <h2>Our Hiring Process</h2>
+        <p>From application to offer, we aim to complete the process within 10 business days.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Apply</h3>
+          <p>Submit your resume and a few details about yourself. We read every application personally.</p>
+        </div>
+        <div class="card">
+          <h3>2. Technical Screen</h3>
+          <p>A short take-home challenge relevant to the role. No whiteboarding, no stress — just show us how you think.</p>
+        </div>
+        <div class="card">
+          <h3>3. Chat With Us</h3>
+          <p>A 30-minute video call with your future team. We talk about your experience, our work, and fit.</p>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="apply.html" class="btn btn-primary">Start Your Application <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo small">Synthium <span>Data</span></span>
+    <div class="footer-links">
+      <a href="index.html">ML Team</a>
+      <a href="corporate.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="apply.html">Apply</a>
+    </div>
+    <p>&copy; 2026 Synthium Data Inc.</p>
+  </div>
+</footer>
+
+<script>
+  // ---------- Nav scroll state ----------
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // ---------- Mobile nav toggle ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => revealObserver.observe(el));
+</script>
+
 </body>
 </html>

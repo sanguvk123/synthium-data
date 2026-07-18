@@ -190,6 +190,8 @@
     document.getElementById("hiddenPhone").value = f("phone");
     document.getElementById("hiddenRole").value = role;
     document.getElementById("hiddenSkills").value = f("skills");
+    const projectLink = document.getElementById("projectLink");
+    if (projectLink) document.getElementById("hiddenProjectLink").value = projectLink.value.trim();
     document.getElementById("hiddenExperience").value = f("experience");
     document.getElementById("hiddenCover").value = f("cover");
     document.getElementById("hiddenResume").value = uploadedResume ? uploadedResume.name : "Not uploaded";

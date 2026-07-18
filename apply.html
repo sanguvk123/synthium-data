@@ -5,51 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apply &mdash; Synthium Data | LLM Training Data Careers</title>
   <meta name="description" content="Apply to Synthium Data. Upload your resume for auto-parsing — we'll reach out within 5 business days. ML engineering, data annotation, and student roles available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">Synthium Data</a>
-      <div class="nav-links">
-        <a href="index.html">ML Team</a>
-        <a href="corporate.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="apply.html" class="btn-primary">Apply Now</a>
-      </div>
-    </div>
-  </nav>
 
-  <section class="page-header">
-    <div class="container">
-      <h1>Apply to Synthium Data</h1>
-      <p>Upload your resume and we'll parse it automatically to save you time.</p>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Synthium <span>Data</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">ML Team</a>
+      <a href="corporate.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="apply.html" class="nav-cta">Apply</a>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <section class="section" style="padding-top:0;">
-    <div class="container form-container">
-      <div style="background:#eef1f5;border-radius:12px;padding:24px 28px;margin-bottom:32px;">
-        <h3 style="font-size:1.1rem;margin-bottom:8px;">Before You Apply</h3>
-        <ul style="padding-left:20px;color:#495057;font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
-          <li><strong>Students &amp; recent grads:</strong> Check out our <a href="index.html" style="color:#1a1a2e;font-weight:600;">ML Team program</a> — built specifically for student engineers.</li>
-          <li><strong>Not sure which role?</strong> Browse our <a href="careers.html" style="color:#1a1a2e;font-weight:600;">Careers page</a> for all open positions.</li>
-          <li><strong>Want to stand out?</strong> Be specific about your impact. Link to repos, portfolios, or anything you've built.</li>
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <span class="badge reveal">Apply Now</span>
+    <h1 class="hero-title reveal">Join <span class="gradient-text">Synthium Data</span></h1>
+    <p class="hero-sub reveal">Upload your resume and we'll parse it automatically to save you time. We read every application personally.</p>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container" style="max-width:720px;">
+
+    <div class="apply-card">
+      <div class="form-banner" id="formBanner">Something went wrong sending your application. Please try again in a moment.</div>
+
+      <div style="background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:28px;">
+        <h3 style="font-size:1rem;margin-bottom:8px;">Before You Apply</h3>
+        <ul style="padding-left:20px;color:var(--text-dim);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+          <li><strong style="color:var(--text);">Students &amp; recent grads:</strong> Check out our <a href="index.html" style="color:var(--accent-2);font-weight:600;">ML Team program</a> built specifically for student engineers.</li>
+          <li><strong style="color:var(--text);">Not sure which role?</strong> Browse our <a href="careers.html" style="color:var(--accent-2);font-weight:600;">Careers page</a> for all open positions.</li>
+          <li><strong style="color:var(--text);">Want to stand out?</strong> Be specific about your impact. Link to repos, portfolios, or anything you've built.</li>
         </ul>
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container form-container">
       <form id="applyForm" novalidate action="https://script.google.com/macros/s/AKfycbxKOwo_DhhOixwPAgzHBV_3PXqe2GezLi_PUJ9pI9-urmOA2TCMDszm1pXAvLChNe_aag/exec" method="POST" target="submitFrame">
 
         <div class="form-group">
-          <label for="resume">Upload Resume (PDF, DOCX)</label>
+          <label for="resume">Upload Resume (PDF, DOCX) <span class="optional">auto-fills the fields below</span></label>
           <div class="resume-zone" id="resumeZone">
-            <span>&#128206; Drop your resume here or click to browse</span>
+            <span>📎 Drop your resume here or click to browse (PDF or DOCX)</span>
             <input type="file" id="resume" accept=".pdf,.docx,.doc" />
           </div>
           <div id="resumeStatus" class="resume-status"></div>
@@ -58,22 +68,25 @@
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" required />
+            <input type="text" id="firstName" required placeholder="Ada" />
+            <span class="field-error">Please enter your first name.</span>
           </div>
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" required />
+            <input type="text" id="lastName" required placeholder="Lovelace" />
+            <span class="field-error">Please enter your last name.</span>
           </div>
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" required placeholder="you@university.edu" />
+          <span class="field-error">Please enter a valid email address.</span>
         </div>
 
         <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" />
+          <label for="phone">Phone <span class="optional">optional</span></label>
+          <input type="tel" id="phone" placeholder="+1 (555) 123-4567" />
         </div>
 
         <div class="form-group">
@@ -90,21 +103,35 @@
             <option>Senior Annotator (Domain Specialist)</option>
             <option>General Application</option>
           </select>
+          <span class="field-error">Please select a position.</span>
         </div>
 
         <div class="form-group">
-          <label for="skills">Skills (comma separated)</label>
+          <label for="skills">Skills (comma separated) <span class="optional">optional</span></label>
           <input type="text" id="skills" placeholder="e.g. Python, PyTorch, Spark, SQL" />
+        </div>
+
+        <div class="form-group">
+          <label for="projectLink">Project Link <span class="optional">optional</span></label>
+          <input type="text" id="projectLink" placeholder="Link to your best project, portfolio, or Kaggle kernel" />
+          <span class="field-error">That link doesn't look quite right.</span>
         </div>
 
         <div class="form-group">
           <label for="experience">Relevant Experience</label>
           <textarea id="experience" rows="5" placeholder="Briefly describe your relevant experience..."></textarea>
+          <span class="field-error">Tell us about your experience.</span>
         </div>
 
         <div class="form-group">
-          <label for="cover">Cover Letter / Notes</label>
-          <textarea id="cover" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
+          <label for="cover">Cover Letter / Notes <span class="optional">optional</span></label>
+          <textarea id="cover" rows="4" placeholder="Why Synthium Data? What are you excited about? Anything else you'd like us to know?"></textarea>
+        </div>
+
+        <!-- Honeypot field for basic bot protection -->
+        <div class="honeypot-field" aria-hidden="true">
+          <label for="hpField">Company Website</label>
+          <input type="text" id="hpField" name="_hpField" tabindex="-1" autocomplete="off" />
         </div>
 
         <input type="hidden" name="_subject" id="hiddenSubject" />
@@ -113,58 +140,109 @@
         <input type="hidden" name="Phone" id="hiddenPhone" />
         <input type="hidden" name="Role" id="hiddenRole" />
         <input type="hidden" name="Skills" id="hiddenSkills" />
+        <input type="hidden" name="Project Link" id="hiddenProjectLink" />
         <input type="hidden" name="Experience" id="hiddenExperience" />
         <input type="hidden" name="Cover Letter" id="hiddenCover" />
         <input type="hidden" name="Resume" id="hiddenResume" />
 
-        <button type="submit" class="btn-primary btn-lg btn-block">Submit Application</button>
+        <div class="form-group apply-submit">
+          <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+            <span class="btn-label">Submit Application</span>
+          </button>
+        </div>
       </form>
-      <iframe name="submitFrame" style="display:none"></iframe>
-      <div id="formSuccess" class="form-success hidden">
-        <h2>&#10003; Application Submitted</h2>
-        <p>We'll review your application and get back to you within 5 business days.</p>
-        <p style="margin-top:12px;font-size:0.875rem;color:#868e96;">No confirmation email? Drop us a line at <a href="mailto:sangkalbe@gmail.com">sangkalbe@gmail.com</a></p>
-      </div>
+      <iframe name="submitFrame" style="display:none" title="submission frame"></iframe>
 
-      <div style="margin-top:40px;padding-top:32px;border-top:1px solid #e9ecef;">
-        <h3 style="font-size:1rem;margin-bottom:12px;">What Happens Next</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;font-size:0.85rem;color:#495057;">
-          <div style="background:#f8f9fc;border-radius:8px;padding:20px;">
-            <strong style="display:block;font-size:1rem;margin-bottom:4px;">1. Review</strong>
-            <span>We read every application. If there's a fit, we reach out within 5 business days.</span>
-          </div>
-          <div style="background:#f8f9fc;border-radius:8px;padding:20px;">
-            <strong style="display:block;font-size:1rem;margin-bottom:4px;">2. Screen</strong>
-            <span>A short take-home challenge relevant to the role you applied for.</span>
-          </div>
-          <div style="background:#f8f9fc;border-radius:8px;padding:20px;">
-            <strong style="display:block;font-size:1rem;margin-bottom:4px;">3. Meet</strong>
-            <span>A 30-minute conversation with your future team. We keep it informal and two-way.</span>
-          </div>
+      <div class="success-panel hidden" id="successPanel">
+        <div class="success-check">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12.5L9 17.5L20 6.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Application Received! 🎉</h3>
+        <p>We'll review your application and get back to you within 5 business days. Keep an eye on your inbox (and spam, just in case).</p>
+        <p style="margin-top:8px;font-size:0.85rem;color:var(--text-faint);">No confirmation email? Drop us a line at <a href="mailto:sangkalbe@gmail.com" style="color:var(--accent-2);">sangkalbe@gmail.com</a></p>
+        <span class="success-reset" id="resetForm">Submit another application</span>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);">
+      <h3 style="font-size:1rem;margin-bottom:16px;">What Happens Next</h3>
+      <div class="grid-3">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;">
+          <strong style="display:block;font-size:1.1rem;margin-bottom:4px;color:var(--accent-2);">1. Review</strong>
+          <span style="color:var(--text-dim);font-size:0.9rem;">We read every application. If there's a fit, we reach out within 5 business days.</span>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;">
+          <strong style="display:block;font-size:1.1rem;margin-bottom:4px;color:var(--accent-2);">2. Screen</strong>
+          <span style="color:var(--text-dim);font-size:0.9rem;">A short take-home challenge relevant to the role you applied for.</span>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;">
+          <strong style="display:block;font-size:1.1rem;margin-bottom:4px;color:var(--accent-2);">3. Meet</strong>
+          <span style="color:var(--text-dim);font-size:0.9rem;">A 30-minute conversation with your future team. We keep it informal and two-way.</span>
         </div>
       </div>
-
-      <div style="margin-top:32px;text-align:center;">
-        <p style="font-size:0.85rem;color:#868e96;">
-          Looking for our <a href="index.html" style="color:#1a1a2e;font-weight:600;">student ML team program</a>?
-          Or want to learn more <a href="corporate.html" style="color:#1a1a2e;font-weight:600;">about Synthium Data</a>?
-        </p>
-      </div>
     </div>
-  </section>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>&copy; 2026 Synthium Data Inc.</span>
-      <div class="footer-links">
-        <a href="index.html">ML Team</a>
-        <a href="corporate.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="apply.html">Apply</a>
-      </div>
+    <div style="margin-top:32px;text-align:center;">
+      <p style="font-size:0.85rem;color:var(--text-faint);">
+        Looking for our <a href="index.html" style="color:var(--accent-2);font-weight:600;">student ML team program</a>?
+        Or want to learn more <a href="corporate.html" style="color:var(--accent-2);font-weight:600;">about Synthium Data</a>?
+      </p>
     </div>
-  </footer>
 
-  <script src="js/script.js"></script>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo small">Synthium <span>Data</span></span>
+    <div class="footer-links">
+      <a href="index.html">ML Team</a>
+      <a href="corporate.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="apply.html">Apply</a>
+    </div>
+    <p>&copy; 2026 Synthium Data Inc.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  // ---------- Nav scroll state ----------
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // ---------- Mobile nav toggle ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => revealObserver.observe(el));
+</script>
+
 </body>
 </html>

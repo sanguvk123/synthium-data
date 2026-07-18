@@ -5,120 +5,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Synthium Data | LLM Training Data &amp; ML Infrastructure</title>
   <meta name="description" content="Synthium Data builds the data infrastructure that powers frontier AI models. Petabyte-scale pipelines, RLHF annotation, and ML training data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">Synthium Data</a>
-      <div class="nav-links">
-        <a href="index.html">ML Team</a>
-        <a href="corporate.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="apply.html" class="btn-primary">Apply Now</a>
-      </div>
-    </div>
-  </nav>
 
-  <section class="hero">
-    <div class="container">
-      <h1>We turn raw LLM data into<br /><span class="highlight">trainable intelligence</span></h1>
-      <p class="hero-sub">
-        Synthium Data partners with leading LLM companies to ingest, clean, annotate,
-        and package high-quality training data at scale.
-      </p>
-      <div class="hero-actions">
-        <a href="careers.html" class="btn-primary btn-lg">Join Our Team</a>
-        <a href="index.html" class="btn-outline btn-lg">ML Team &rarr;</a>
-      </div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Synthium <span>Data</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">ML Team</a>
+      <a href="corporate.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="apply.html" class="nav-cta">Apply</a>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">About Synthium Data</h2>
-      <p class="section-sub">We're a data infrastructure company building the foundation for frontier AI.</p>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Our Mission</h3>
-          <p>To enable the next generation of AI models by providing the highest-quality training data — meticulously curated, decontaminated, and formatted for optimal model performance.</p>
-        </div>
-        <div class="card">
-          <h3>Our Team</h3>
-          <p>A diverse mix of ML engineers, data scientists, domain specialists, and student engineers working together across time zones. We value rigor, curiosity, and ownership.</p>
-        </div>
-      </div>
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <span class="badge reveal">Synthium Data</span>
+    <h1 class="hero-title reveal">We turn raw LLM data into<br /><span class="gradient-text">trainable intelligence</span></h1>
+    <p class="hero-sub reveal">
+      We partner with leading LLM companies to ingest, clean, annotate, and package high-quality training data at scale.
+    </p>
+    <div class="hero-actions reveal">
+      <a href="careers.html" class="btn btn-primary">Join Our Team <span class="arrow">→</span></a>
+      <a href="index.html" class="btn btn-ghost">ML Team &rarr;</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">What We Do</h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">&#9881;</div>
-          <h3>Ingest &amp; Filter</h3>
-          <p>Raw data pipelines that deduplicate, decontaminate, and filter at petabyte scale.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#9998;</div>
-          <h3>Annotate &amp; Label</h3>
-          <p>Instruction-response pairs, RLHF preferences, and safety labeling by expert annotators.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#9889;</div>
-          <h3>Format &amp; Package</h3>
-          <p>Sharded JSONL / HDF5 outputs ready for SFT, DPO, and RLHF training pipelines.</p>
-        </div>
+<section class="section reveal">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="eyebrow">About</span>
+      <h2>We're the data infrastructure behind frontier AI.</h2>
+      <p>Synthium Data provides the highest-quality training data for the next generation of AI models.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To enable the next generation of AI models by providing meticulously curated, decontaminated, and formatted training data for optimal model performance across SFT, DPO, and RLHF pipelines.</p>
+      </div>
+      <div class="card">
+        <h3>Our Team</h3>
+        <p>A diverse mix of ML engineers, data scientists, domain specialists, and student engineers working together across 6+ time zones. We value rigor, curiosity, and ownership.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Why Work With Us</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Impact at Scale</h3>
-          <p>Your work directly powers the models that thousands of developers and researchers depend on. Every pipeline you build improves real AI systems.</p>
-        </div>
-        <div class="card">
-          <h3>Remote-First Culture</h3>
-          <p>Work from anywhere. We communicate async-first, meet weekly for sprints, and value output over hours logged.</p>
-        </div>
-        <div class="card">
-          <h3>Grow With Us</h3>
-          <p>From intern to senior engineer — we promote from within and invest heavily in mentorship, especially for early-career team members.</p>
-        </div>
-        <div class="card">
-          <h3>Cutting-Edge Problems</h3>
-          <p>Petabyte-scale deduplication, decontamination, RLHF data pipelines, tokenization strategies — you won't find these problems anywhere else.</p>
-        </div>
+<section class="section section-alt reveal">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="eyebrow">What We Do</span>
+      <h2>End-to-end training data pipelines.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">&#9881;</div>
+        <h3>Ingest &amp; Filter</h3>
+        <p>Raw data pipelines that deduplicate, decontaminate, and filter at petabyte scale. We handle trillions of tokens from web crawls, code repositories, and domain-specific corpora.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9998;</div>
+        <h3>Annotate &amp; Label</h3>
+        <p>Instruction-response pairs, RLHF preferences, and safety labeling by expert annotators. We maintain rigorous quality rubrics with continuous inter-annotator agreement tracking.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9889;</div>
+        <h3>Format &amp; Package</h3>
+        <p>Sharded JSONL, Parquet, and HDF5 outputs ready for SFT, DPO, and RLHF training pipelines. Custom schemas including ChatML, ShareGPT, and Alpaca formats.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Open Positions</h2>
-      <p class="section-sub">We're hiring across the board — from student interns to senior engineers.</p>
-      <div class="center-btn">
-        <a href="careers.html" class="btn-outline" style="color:#fff;border-color:#fff;">View All Openings</a>
-        <a href="apply.html" class="btn-primary btn-lg" style="margin-left:12px;">Apply Now</a>
+<section class="section reveal">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="eyebrow">Why Work Here</span>
+      <h2>Build the infrastructure that powers AI.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Impact at Scale</h3>
+        <p>Your work directly powers the models that thousands of developers and researchers depend on. Every pipeline you build improves real AI systems used by real people.</p>
+      </div>
+      <div class="card">
+        <h3>Remote-First Culture</h3>
+        <p>Work from anywhere. We communicate async-first, meet weekly for sprints, and value output over hours logged. Flexible schedules that respect your time zone.</p>
+      </div>
+      <div class="card">
+        <h3>Grow With Us</h3>
+        <p>From intern to senior engineer — we promote from within and invest heavily in mentorship. Junior team members pair directly with engineers who've trained models at scale.</p>
+      </div>
+      <div class="card">
+        <h3>Cutting-Edge Problems</h3>
+        <p>Petabyte-scale deduplication, decontamination, RLHF data pipelines, tokenization strategies, and LLM evaluation — you won't find these problems anywhere else.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>&copy; 2026 Synthium Data Inc.</span>
-      <div class="footer-links">
-        <a href="index.html">ML Team</a>
-        <a href="corporate.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="apply.html">Apply</a>
-      </div>
+<section class="section section-alt reveal">
+  <div class="container">
+    <div class="cta-banner">
+      <h3>Ready to build the future of AI data?</h3>
+      <p>We're hiring across the board — from student interns to senior engineers.</p>
+      <a href="careers.html" class="btn btn-ghost">View All Openings</a>
+      <a href="apply.html" class="btn btn-primary" style="margin-left:12px;">Apply Now <span class="arrow">→</span></a>
     </div>
-  </footer>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo small">Synthium <span>Data</span></span>
+    <div class="footer-links">
+      <a href="index.html">ML Team</a>
+      <a href="corporate.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="apply.html">Apply</a>
+    </div>
+    <p>&copy; 2026 Synthium Data Inc.</p>
+  </div>
+</footer>
+
+<script>
+  // ---------- Nav scroll state ----------
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // ---------- Mobile nav toggle ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => revealObserver.observe(el));
+</script>
+
 </body>
 </html>
